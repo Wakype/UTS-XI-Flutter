@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_shop/login.dart';
+import 'package:my_shop/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +14,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: const Login(),
+      // home: const Login(),
+      theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: const AppBarTheme(
+            color: Colors.white,
+            elevation: 0,
+            iconTheme: IconThemeData(color: Colors.black, size: 35),
+
+          )),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Login(),
+        '/regiter': (context) => const Register(),
+      },
     );
   }
 }
-
-
