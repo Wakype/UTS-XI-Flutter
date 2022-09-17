@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_shop/login.dart';
+import 'package:my_shop/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: const Login(),
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen()
     );
   }
 }
-
-

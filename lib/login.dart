@@ -5,6 +5,14 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Container(
+        child: Column(
+          children: [
+            Text('test')
+          ],
+        ),
+      ),
+    );
   }
 }
