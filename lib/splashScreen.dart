@@ -1,9 +1,10 @@
-// ignore_for_file: unused_import, use_key_in_widget_constructors, prefer_const_constructors, library_private_types_in_public_api
+// ignore_for_file: unused_import, use_key_in_widget_constructors, prefer_const_constructors, library_private_types_in_public_api, annotate_overrides, file_names
 
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:my_shop/login.dart';
 import 'package:my_shop/main.dart';
+import 'package:my_shop/shop.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     var duration = Duration(seconds: 2);
     return Timer(duration, () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Login()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => Shop()));
     });
   }
 
