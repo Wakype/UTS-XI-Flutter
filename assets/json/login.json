@@ -3,8 +3,13 @@
   "message": "Successfully",
   "data": [
     {
+<<<<<<< HEAD
       "username": "smkmq",
       "password": "12345"
+=======
+      "username": "LarsAlfarabi",
+      "password": "12345678"
+>>>>>>> b161d9d590eda2a8331e163c6ba2ac17fb440615
     }
   ]
 }

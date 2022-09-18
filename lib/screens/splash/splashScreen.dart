@@ -1,8 +1,13 @@
+<<<<<<< HEAD:lib/splashScreen.dart
 // ignore_for_file: unused_import, use_key_in_widget_constructors, prefer_const_constructors, library_private_types_in_public_api, annotate_overrides, file_names
+=======
+// ignore_for_file: unused_import, use_key_in_widget_constructors, prefer_const_constructors, library_private_types_in_public_api, file_names
+>>>>>>> b161d9d590eda2a8331e163c6ba2ac17fb440615:lib/screens/splash/splashScreen.dart
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:my_shop/login.dart';
+import 'package:my_shop/screens/log_in/component/body.dart';
+import 'package:my_shop/screens/log_in/login.dart';
 import 'package:my_shop/main.dart';
 import 'package:my_shop/shop.dart';
 
@@ -26,6 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
     startSplashScreen();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
