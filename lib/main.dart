@@ -1,7 +1,8 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
-import 'package:my_shop/screens/splash/splashScreen.dart';
+// import 'package:my_shop/screens/splash/splashScreen.dart';
+import 'package:my_shop/shop.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           ))),
       initialRoute: '/',
       routes: {
-        '/': (context) => SplashScreen(),
+        '/': (context) => Shop(),
 
       },
     );
