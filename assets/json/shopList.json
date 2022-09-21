@@ -1,0 +1,84 @@
+{
+    "status" : 200,
+    "message" : "Successfully",
+    "data" : [
+        {
+            "id_barang" : 1,
+            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "name_barang" : "Jus 1",
+            "asal_barang" : "Kota Bogor",
+            "harga_barang" : "Rp25.000,-",
+            "penjual" : "Lars Alfaraby",
+            "detail_barang" : [
+                {
+                    "deskripsi_barang" : "barang bagussss"
+                }
+            ]
+        },
+        {
+            "id_barang" : 2,
+            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "name_barang" : "Jus 2",
+            "asal_barang" : "Jakarta Barat",
+            "harga_barang" : "Rp25.000,-",
+            "penjual" : "Lars Alfaraby",
+            "detail_barang" : [
+                {
+                    "deskripsi_barang" : "barang bagussss"
+                }
+            ]
+        },
+        {
+            "id_barang" : 3,
+            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "name_barang" : "Jus 3",
+            "asal_barang" : "Kota Depok",
+            "harga_barang" : "Rp25.000,-",
+            "penjual" : "Lars Alfaraby",
+            "detail_barang" : [
+                {
+                    "deskripsi_barang" : "barang bagussss"
+                }
+            ]
+        },
+        {
+            "id_barang" : 4,
+            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "name_barang" : "Jus 4",
+            "asal_barang" : "Kota Bekasi",
+            "harga_barang" : "Rp25.000,-",
+            "penjual" : "Lars Alfaraby",
+            "detail_barang" : [
+                {
+                    "deskripsi_barang" : "barang bagussss"
+                }
+            ]
+        },
+        {
+            "id_barang" : 5,
+            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "name_barang" : "Jus 5",
+            "asal_barang" : "Jakarta Pusat",
+            "harga_barang" : "Rp25.000,-",
+            "penjual" : "Lars Alfaraby",
+            "detail_barang" : [
+                {
+                    "deskripsi_barang" : "barang bagussss"
+                }
+            ]
+        },
+        {
+            "id_barang" : 6,
+            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "name_barang" : "Jus 6",
+            "asal_barang" : "Kota Bogor",
+            "harga_barang" : "Rp25.000,-",
+            "penjual" : "Lars Alfaraby",
+            "detail_barang" : [
+                {
+                    "deskripsi_barang" : "barang bagussss"
+                }
+            ]
+        }
+    ]
+}

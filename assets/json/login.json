@@ -1,10 +1,8 @@
 {
   "status": 200,
   "message": "Successfully",
-  "data": [
-    {
-      "username": "smkmq",
-      "password": "12345"
-    }
-  ]
+  "data": {
+    "email": "smkmq@gmail.com",
+    "password": "12345"
+  }
 }
