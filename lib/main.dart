@@ -1,7 +1,9 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:my_shop/model/shopsData.dart';
 import 'package:my_shop/screens/splash/splashScreen.dart';
+import 'package:my_shop/searchPage.dart';
 // import 'package:my_shop/screens/splash/splashScreen.dart';
 import 'package:my_shop/shop.dart';
 
@@ -36,7 +38,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashScreen(),
         '/shop': (context) => Shop(),
-
+        // '/detailShop': (context) => Shop(
+        //   data: ModalRoute.of(context)?.settings.arguments as Shops),
+        '/searchPage': (context) => SearchPage(
+            keyword: ModalRoute.of(context)?.settings.arguments as String)
       },
     );
   }
