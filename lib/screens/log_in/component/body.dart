@@ -20,22 +20,6 @@ class Body extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(25)),
-                            color: Colors.grey.withOpacity(0.1)),
-                        child: InkWell(
-                          child: const Icon(
-                            Icons.chevron_left,
-                            size: 40,
-                            // color: Colors.b,
-                          ),
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ),
                       Image.asset('assets/image/logo2.png'),
                     ],
                   ),
@@ -59,7 +43,7 @@ class Body extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 49,
+              height: 69,
             ),
             Column(
               children: [
@@ -142,6 +126,7 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+  bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
@@ -217,7 +202,7 @@ class _SignFormState extends State<SignForm> {
         fontSize: 18,
         color: Colors.white,
       ),
-      obscureText: true,
+      obscureText: _obscureText,
       decoration: InputDecoration(
         labelText: "Password",
         labelStyle: const TextStyle(
@@ -236,8 +221,18 @@ class _SignFormState extends State<SignForm> {
           horizontal: 42,
           vertical: 24,
         ),
-        suffixIcon: const CustomSuffixIcon(
-          svgIcon: "assets/icon/noEyes.svg",
+        suffixIcon: GestureDetector(
+          onTap: () {
+            setState(() {
+              _obscureText = !_obscureText;
+            });
+          },
+          child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 24),
+              child: Icon(
+                _obscureText ? Icons.visibility : Icons.visibility_off,
+                color: Colors.white,
+              )),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(22),
@@ -273,7 +268,7 @@ class _SignFormState extends State<SignForm> {
           color: Colors.white,
           fontSize: 19,
         ),
-        hintText: "Enter your name",
+        hintText: "Enter your email",
         hintStyle: const TextStyle(
           fontFamily: "Poppins",
           color: Colors.white,

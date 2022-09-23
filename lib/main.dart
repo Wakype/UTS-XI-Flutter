@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_shop/screens/splash/splashScreen.dart';
+import 'package:my_shop/screens/Detail%20Page/detail_page.dart';
+import 'package:my_shop/screens/log_in/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
           ))),
       initialRoute: '/',
       routes: {
-        '/': (context) => SplashScreen(),
-
+        '/': (context) => const DetailPage(),
+        '/login': (context) => const LoginPage(),
       },
     );
   }
