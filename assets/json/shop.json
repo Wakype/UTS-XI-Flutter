@@ -1,0 +1,194 @@
+{
+    "status" : 200,
+    "message" : "Success get data",
+    "data" : [
+        {
+            "id_foods" : 1,
+            "name_foods" : "Sate",
+            "image_foods" : "https://asset.kompas.com/crops/89gV9XIgLw8Tzv2im_h4C9aEjd8=/0x0:993x662/750x500/data/photo/2021/03/27/605ed24c33816.jpg",
+            "kcal_foods" : 681,
+            "rating_foods" : 4.8,
+            "weight_foods" : 0.73,
+            "time_foods" : 30,
+            "recipe_maker_foods" : "Chef Juna",
+            "ingredient_foods" : [
+                {
+                    "name_ingredient_foods" : "Meat",
+                    "weight_ingredient_foods" : "1 kg"
+                },
+                {
+                    "name_ingredient_foods" : "Soy Sauce",
+                    "weight_ingredient_foods" : "5 sp"
+                },
+                {
+                    "name_ingredient_foods" : "Peanuts",
+                    "weight_ingredient_foods" : "200 gr"
+                },
+                {
+                    "name_ingredient_foods" : "Chilli",
+                    "weight_ingredient_foods" : "3 pcs"
+                },
+                {
+                    "name_ingredient_foods" : "Warm Water",
+                    "weight_ingredient_foods" : "500 ml"
+                }
+            ]
+        },
+        {
+            "id_foods" : 2,
+            "name_foods" : "Fried Rice",
+            "image_foods" : "https://cdn1-production-images-kly.akamaized.net/KxuztQKl3tnUN0Fw5iAwKsnX_u0=/0x148:1920x1230/640x360/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3093328/original/069244600_1585909700-fried-2509089_1920.jpg",
+            "kcal_foods" : 600,
+            "rating_foods" : 4.5,
+            "weight_foods" : 0.75,
+            "time_foods" : 35,
+            "recipe_maker_foods" : "Chef Arnold",
+            "ingredient_foods" : [
+                {
+                    "name_ingredient_foods" : "Soy Sauce",
+                    "weight_ingredient_foods" : "5 sp"
+                },
+                {
+                    "name_ingredient_foods" : "Rice",
+                    "weight_ingredient_foods" : "200 gr"
+                },
+                {
+                    "name_ingredient_foods" : "Chilli",
+                    "weight_ingredient_foods" : "3 pcs"
+                },
+                {
+                    "name_ingredient_foods" : "Warm Water",
+                    "weight_ingredient_foods" : "500 ml"
+                }
+            ]
+        },
+        {
+            "id_foods" : 3,
+            "name_foods" : "Fried Chicken",
+            "image_foods" : "https://asset.kompas.com/crops/WBLvTBboX-lKFj3ehPXJpmMULYY=/0x298:750x798/780x390/data/photo/2020/09/25/5f6da653c1860.jpg",
+            "kcal_foods" : 800,
+            "rating_foods" : 5.0,
+            "weight_foods" : 0.85,
+            "time_foods" : 40,
+            "recipe_maker_foods" : "Chef Galih",
+            "ingredient_foods" : [
+                {
+                    "name_ingredient_foods" : "Chicken",
+                    "weight_ingredient_foods" : "1 kg"
+                },
+                {
+                    "name_ingredient_foods" : "Soy Sauce",
+                    "weight_ingredient_foods" : "5 sp"
+                },
+                {
+                    "name_ingredient_foods" : "Flour",
+                    "weight_ingredient_foods" : "200 gr"
+                },
+                {
+                    "name_ingredient_foods" : "Salt",
+                    "weight_ingredient_foods" : "3 pcs"
+                },
+                {
+                    "name_ingredient_foods" : "Warm Water",
+                    "weight_ingredient_foods" : "500 ml"
+                }
+            ]
+        },
+        {
+            "id_foods" : 4,
+            "name_foods" : "Bakwan",
+            "image_foods" : "https://cdn0-production-images-kly.akamaized.net/UqZEUwWxSbN5XxvjSwT9nRfRtek=/1459x0:3990x3376/469x625/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2761430/original/062937300_1553588238-shutterstock_1287553195.JPG",
+            "kcal_foods" : 300,
+            "rating_foods" : 3.5,
+            "weight_foods" : 0.50,
+            "time_foods" : 20,
+            "recipe_maker_foods" : "Chef Renatta",
+            "ingredient_foods" : [
+                {
+                    "name_ingredient_foods" : "Vegetable",
+                    "weight_ingredient_foods" : "1 kg"
+                },
+                {
+                    "name_ingredient_foods" : "Olive",
+                    "weight_ingredient_foods" : "50 ml"
+                },
+                {
+                    "name_ingredient_foods" : "Flour",
+                    "weight_ingredient_foods" : "200 gr"
+                },
+                {
+                    "name_ingredient_foods" : "Salt",
+                    "weight_ingredient_foods" : "3 pcs"
+                },
+                {
+                    "name_ingredient_foods" : "Warm Water",
+                    "weight_ingredient_foods" : "500 ml"
+                }
+            ]
+        },
+        {
+            "id_foods" : 5,
+            "name_foods" : "Tempe",
+            "image_foods" : "https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/09/24/tempe-gorengjpg-20210924014738.jpg",
+            "kcal_foods" : 450,
+            "rating_foods" : 4.5,
+            "weight_foods" : 0.70,
+            "time_foods" : 15,
+            "recipe_maker_foods" : "Chef Bambang",
+            "ingredient_foods" : [
+                {
+                    "name_ingredient_foods" : "Soy Bean",
+                    "weight_ingredient_foods" : "1 kg"
+                },
+                {
+                    "name_ingredient_foods" : "Olive",
+                    "weight_ingredient_foods" : "50 ml"
+                },
+                {
+                    "name_ingredient_foods" : "Flour",
+                    "weight_ingredient_foods" : "200 gr"
+                },
+                {
+                    "name_ingredient_foods" : "Salt",
+                    "weight_ingredient_foods" : "3 pcs"
+                },
+                {
+                    "name_ingredient_foods" : "Warm Water",
+                    "weight_ingredient_foods" : "500 ml"
+                }
+            ]
+        },
+        {
+            "id_foods" : 6,
+            "name_foods" : "Rendang",
+            "image_foods" : "https://cdn0-production-images-kly.akamaized.net/k-8T2_IXluILxIDDBwJvGuzAtkE=/0x120:3000x1811/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3282059/original/075075700_1604028408-shutterstock_1788721670.jpg",
+            "kcal_foods" : 850,
+            "rating_foods" : 5.0,
+            "weight_foods" : 0.90,
+            "time_foods" : 45,
+            "recipe_maker_foods" : "Chef Gordon",
+            "ingredient_foods" : [
+                {
+                    "name_ingredient_foods" : "Meat",
+                    "weight_ingredient_foods" : "1 kg"
+                },
+                {
+                    "name_ingredient_foods" : "Olive",
+                    "weight_ingredient_foods" : "50 ml"
+                },
+                {
+                    "name_ingredient_foods" : "Coconut Cream",
+                    "weight_ingredient_foods" : "200 gr"
+                },
+                {
+                    "name_ingredient_foods" : "Salt",
+                    "weight_ingredient_foods" : "3 pcs"
+                },
+                {
+                    "name_ingredient_foods" : "Warm Water",
+                    "weight_ingredient_foods" : "500 ml"
+                }
+            ]
+        }
+    ]
+}

@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:my_shop/screens/Detail%20Page/detail_page.dart';
 import 'package:my_shop/screens/log_in/login.dart';

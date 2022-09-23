@@ -2,9 +2,11 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:my_shop/screens/log_in/component/body.dart';
-import 'package:my_shop/screens/log_in/login.dart';
+// import 'package:my_shop/screens/log_in/component/body.dart';
+// import 'package:my_shop/screens/log_in/login.dart';
 import 'package:my_shop/main.dart';
+import 'package:my_shop/screens/log_in/login.dart';
+import 'package:my_shop/shop.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
