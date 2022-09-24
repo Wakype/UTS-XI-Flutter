@@ -8,6 +8,7 @@ import 'package:my_shop/searchPage.dart';
 import 'package:my_shop/shop.dart';
 import 'package:my_shop/screens/Detail%20Page/detail_page.dart';
 import 'package:my_shop/screens/log_in/login.dart';
+import 'package:my_shop/shop.dart';
 
 void main() {
   runApp(const MyApp());
