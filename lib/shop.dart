@@ -17,7 +17,7 @@ class _ShopState extends State<Shop> {
   TextEditingController search = TextEditingController();
 
   void getShopsData() {
-    FoodService().getData().then((value) {
+    ShopService().getData().then((value) {
       setState(() {
         dataShops = value;
       });
@@ -259,19 +259,19 @@ Widget Feature(
         height: 100,
         margin: EdgeInsets.only(left: 7, right: 10, bottom: 15),
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Color(0xffFFF4CF).withOpacity(0.7),
+              spreadRadius: 5,
+              blurRadius: 5,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
           color: Color(bgColor),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: Color(color),
           ),
-          // color: Color(color),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Color.fromARGB(255, 0, 0, 0),
-          //     // blurRadius: 5,
-          //     offset: Offset(8, 10), // Shadow position
-          //   ),
-          // ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -305,14 +305,23 @@ Widget ShopList(context, Shops data, int color) {
       children: [
         InkWell(
           onTap: () {
-            Navigator.pushNamed(context, '/detailEat', arguments: data);
+            Navigator.pushNamed(context, '/detailShop', arguments: data);
           },
           child: Container(
-            margin: EdgeInsets.symmetric(vertical: 10),
+            margin: EdgeInsets.symmetric(vertical: 15),
             height: 350,
             width: 200,
             decoration: BoxDecoration(
-                color: Colors.blue,
+                // color: Colors.blue,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xffFFF4CF).withOpacity(0.7),
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+                border: Border.all(width: 2, color: Color(color)),
                 borderRadius: BorderRadius.all(Radius.circular(15))),
             child: Column(
               children: [
@@ -325,7 +334,7 @@ Widget ShopList(context, Shops data, int color) {
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15)),
                     image: DecorationImage(
-                      image: NetworkImage(
+                      image: AssetImage(
                         data.gambarBarang,
                       ),
                       fit: BoxFit.contain,
@@ -361,7 +370,7 @@ Widget ShopList(context, Shops data, int color) {
                         child: Text(
                           data.asalBarang,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Color(0xffFFCB42),
                             fontSize: 16,
                           ),
                           textAlign: TextAlign.left,

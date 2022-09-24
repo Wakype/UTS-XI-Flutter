@@ -4,7 +4,7 @@
     "data" : [
         {
             "id_barang" : 1,
-            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "gambar_barang" : "assets/image/jeruk.png",
             "name_barang" : "Jus Jeruk",
             "asal_barang" : "Jakarta Barat",
             "harga_barang" : "Rp25.000,-",
@@ -17,10 +17,10 @@
         },
         {
             "id_barang" : 2,
-            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "gambar_barang" : "assets/image/semangka.png",
             "name_barang" : "Jus Semangka",
             "asal_barang" : "Jakarta Pusat",
-            "harga_barang" : "Rp25.000,-",
+            "harga_barang" : "Rp30.000,-",
             "penjual" : "Lars Alfaraby",
             "detail_barang" : [
                 {
@@ -30,10 +30,10 @@
         },
         {
             "id_barang" : 3,
-            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
-            "name_barang" : "Jus Salak",
+            "gambar_barang" : "assets/image/alpukat.png",
+            "name_barang" : "Jus Alpukat",
             "asal_barang" : "Jakarta Timur",
-            "harga_barang" : "Rp25.000,-",
+            "harga_barang" : "Rp20.000,-",
             "penjual" : "Lars Alfaraby",
             "detail_barang" : [
                 {
@@ -43,10 +43,10 @@
         },
         {
             "id_barang" : 4,
-            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "gambar_barang" : "assets/image/jambu.png",
             "name_barang" : "Jus Jambu",
             "asal_barang" : "Jakarta Selatan",
-            "harga_barang" : "Rp25.000,-",
+            "harga_barang" : "Rp15.000,-",
             "penjual" : "Lars Alfaraby",
             "detail_barang" : [
                 {
@@ -56,10 +56,10 @@
         },
         {
             "id_barang" : 5,
-            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
-            "name_barang" : "Jus Stroberi",
+            "gambar_barang" : "assets/image/kiwi.png",
+            "name_barang" : "Jus Kiwi",
             "asal_barang" : "Jakarta Pusat",
-            "harga_barang" : "Rp25.000,-",
+            "harga_barang" : "Rp40.000,-",
             "penjual" : "Lars Alfaraby",
             "detail_barang" : [
                 {
@@ -69,10 +69,10 @@
         },
         {
             "id_barang" : 6,
-            "gambar_barang" : "https://www.pngmart.com/files/8/Juice-PNG-HD-Photo.png",
+            "gambar_barang" : "assets/image/mangga.png",
             "name_barang" : "Jus Mangga",
             "asal_barang" : "Jakarta Barat",
-            "harga_barang" : "Rp25.000,-",
+            "harga_barang" : "Rp35.000,-",
             "penjual" : "Lars Alfaraby",
             "detail_barang" : [
                 {

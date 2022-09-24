@@ -19,9 +19,12 @@ class _SearchPageState extends State<SearchPage> {
   TextEditingController search = TextEditingController();
 
   void getShopsData() {
-    FoodService().getData().then((value) {
+    ShopService().getData().then((value) {
       setState(() {
         dataShops = value;
+        dataSearch = dataShops
+            .where((element) => element.nameBarang.contains(widget.keyword))
+            .toList();
       });
     });
   }

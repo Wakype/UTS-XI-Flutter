@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import '../model/shopsData.dart';
 
-class FoodService {
+class ShopService {
   getData() async {
     final String response = await rootBundle.loadString('assets/json/shopList.json');
 

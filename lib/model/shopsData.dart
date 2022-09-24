@@ -2,6 +2,8 @@
 //
 //     final dataShops = dataShopsFromJson(jsonString);
 
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
 DataShops dataShopsFromJson(String str) => DataShops.fromJson(json.decode(str));

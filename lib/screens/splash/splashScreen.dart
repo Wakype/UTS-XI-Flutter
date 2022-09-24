@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     var duration = Duration(seconds: 2);
     return Timer(duration, () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Shop()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => LoginPage()));
     });
   }
 

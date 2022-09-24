@@ -1,9 +1,10 @@
-import 'dart:developer';
+// ignore_for_file: unused_import, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
+import 'package:my_shop/screens/log_in/component/signForm.dart';
 import 'custom_surfix_icon.dart';
 import 'socalCard.dart';
-import 'package:my_shop/service/usersService.dart';
-import 'package:my_shop/model/usersData.dart';
+import "package:my_shop/service/usersService.dart";
 
 class Body extends StatefulWidget {
   @override
@@ -28,22 +29,6 @@ class _BodyState extends State<Body> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(25)),
-                            color: Colors.grey.withOpacity(0.1)),
-                        child: InkWell(
-                          child: const Icon(
-                            Icons.chevron_left,
-                            size: 40,
-                            // color: Colors.b,
-                          ),
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ),
                       Image.asset('assets/image/logo2.png'),
                     ],
                   ),
@@ -67,7 +52,7 @@ class _BodyState extends State<Body> {
               ),
             ),
             const SizedBox(
-              height: 49,
+              height: 69,
             ),
             Column(
               children: [
@@ -142,201 +127,190 @@ class _BodyState extends State<Body> {
   }
 }
 
-class SignForm extends StatefulWidget {
-  const SignForm({super.key});
+// class SignForm extends StatefulWidget {
+//   const SignForm({super.key});
 
-  @override
-  State<SignForm> createState() => _SignFormState();
-}
+//   @override
+//   State<SignForm> createState() => _SignFormState();
+// }
 
-class _SignFormState extends State<SignForm> {
-  Users? dataUsers;
-  TextEditingController _email = new TextEditingController();
-  TextEditingController _password = new TextEditingController();
+// class _SignFormState extends State<SignForm> {
+//   bool _obscureText = true;
+//   @override
+//   Widget build(BuildContext context) {
+//     final double height = MediaQuery.of(context).size.height;
+//     return Form(
+//       child: Column(
+//         children: [
+//           const SizedBox(
+//             height: 10,
+//           ),
 
-  void validationLogin() {
-    if (_email.text != "" && _password.text != "") {
-      UsersService().getData().then((value) {
-        setState(() {
-          dataUsers = value;
-          print(dataUsers?.email);
-          log("$dataUsers.email");
-        });
-      });
-      return;
-    }
-  }
+//           //Email address
+//           emailFormFeild(),
 
-  @override
-  Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height;
-    return Form(
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
+//           SizedBox(
+//             height: height * 0.04,
+//           ),
 
-          //Email address
-          customField("Email", _email),
+//           //Password
+//           passwordFormFeild(),
 
-          SizedBox(
-            height: height * 0.04,
-          ),
+//           const SizedBox(
+//             height: 10,
+//           ),
 
-          //Password
-          customField(
-            "password",
-            _password,
-          ),
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.end,
+//             children: const [
+//               Text(
+//                 'Forgot Password ?',
+//                 style: TextStyle(
+//                   fontFamily: "Poppins",
+//                   fontSize: 14.5,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//             ],
+//           ),
+//           // const SizedBox(
+//           //   height: 50,
+//           // ),
+//           SizedBox(
+//             height: height * 0.06,
+//           ),
+//           InkWell(
+//             onTap: () {
+//               Navigator.pushNamed(context, '/shop');
+//             },
+//             child: Container(
+//               padding: const EdgeInsets.symmetric(vertical: 23),
+//               decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(20),
+//                 color: Colors.black,
+//               ),
+//               child: const Center(
+//                   child: Text(
+//                 'Continue',
+//                 style: TextStyle(
+//                   fontFamily: "Poppins",
+//                   color: Color(0xFFFFB200),
+//                   fontWeight: FontWeight.w600,
+//                   fontSize: 16,
+//                 ),
+//               )),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
 
-          const SizedBox(
-            height: 10,
-          ),
+//   TextFormField passwordFormFeild() {
+//     return TextFormField(
+//       style: const TextStyle(
+//         fontFamily: "Poppins",
+//         fontSize: 18,
+//         color: Colors.white,
+//       ),
+//       obscureText: _obscureText,
+//       decoration: InputDecoration(
+//         labelText: "Password",
+//         labelStyle: const TextStyle(
+//           fontFamily: "Poppins",
+//           color: Colors.white,
+//           fontSize: 19,
+//         ),
+//         hintText: "Enter Your Password",
+//         hintStyle: const TextStyle(
+//           fontFamily: "Poppins",
+//           color: Colors.white,
+//           fontSize: 16.5,
+//         ),
+//         floatingLabelBehavior: FloatingLabelBehavior.always,
+//         contentPadding: const EdgeInsets.symmetric(
+//           horizontal: 42,
+//           vertical: 24,
+//         ),
+        // suffixIcon: GestureDetector(
+        //   onTap: () {
+        //     setState(() {
+        //       _obscureText = !_obscureText;
+        //     });
+        //   },
+        //   child: Container(
+        //       margin: const EdgeInsets.symmetric(horizontal: 24),
+        //       child: Icon(
+        //         _obscureText ? Icons.visibility : Icons.visibility_off,
+        //         color: Colors.white,
+        //       )),
+        // ),
+//         enabledBorder: OutlineInputBorder(
+//           borderRadius: BorderRadius.circular(22),
+//           borderSide: const BorderSide(color: Colors.white),
+//           gapPadding: 10,
+//         ),
+//         focusedBorder: OutlineInputBorder(
+//           borderRadius: BorderRadius.circular(22),
+//           borderSide: const BorderSide(color: Colors.white),
+//           gapPadding: 10,
+//         ),
+//         filled: true,
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
-              Text(
-                'Forgot Password ?',
-                style: TextStyle(
-                  fontFamily: "Poppins",
-                  fontSize: 14.5,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-          // const SizedBox(
-          //   height: 50,
-          // ),
-          SizedBox(
-            height: height * 0.06,
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/shop');
-            },
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 23),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.black,
-              ),
-              child: const Center(
-                  child: Text(
-                'Continue',
-                style: TextStyle(
-                  fontFamily: "Poppins",
-                  color: Color(0xFFFFB200),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                ),
-              )),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//         // enabledBorder: OutlineInputBorder(
+//         //   borderRadius: BorderRadius.circular(28),
+//         // ),
+//       ),
+//     );
+//   }
 
-TextFormField customField(String tipe, TextEditingController controller) {
-  return TextFormField(
-    controller: controller,
-    style: const TextStyle(
-      fontFamily: "Poppins",
-      fontSize: 18,
-      color: Colors.white,
-    ),
-    obscureText: tipe == 'Email' ? false : true,
-    decoration: InputDecoration(
-      labelText: tipe == 'Email' ? "Email Address" : "Password",
-      labelStyle: const TextStyle(
-        fontFamily: "Poppins",
-        color: Colors.white,
-        fontSize: 19,
-      ),
-      hintText: tipe == 'Email' ? "Enter Your Email" : "Enter Your Password",
-      hintStyle: const TextStyle(
-        fontFamily: "Poppins",
-        color: Colors.white,
-        fontSize: 16.5,
-      ),
-      floatingLabelBehavior: FloatingLabelBehavior.always,
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: 42,
-        vertical: 24,
-      ),
-      suffixIcon: CustomSuffixIcon(
-        svgIcon:
-            tipe == "Email" ? "assets/icon/user.svg" : "assets/icon/noEyes.svg",
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(22),
-        borderSide: const BorderSide(color: Colors.white),
-        gapPadding: 10,
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(22),
-        borderSide: const BorderSide(color: Colors.white),
-        gapPadding: 10,
-      ),
-      filled: true,
+//   TextFormField emailFormFeild() {
+//     return TextFormField(
+//       style: const TextStyle(
+//         fontFamily: "Poppins",
+//         fontSize: 18,
+//         color: Colors.white,
+//       ),
+//       keyboardType: TextInputType.emailAddress,
+//       decoration: InputDecoration(
+//         labelText: "Email Address",
+//         labelStyle: const TextStyle(
+//           fontFamily: "Poppins",
+//           color: Colors.white,
+//           fontSize: 19,
+//         ),
+//         hintText: "Enter your email",
+//         hintStyle: const TextStyle(
+//           fontFamily: "Poppins",
+//           color: Colors.white,
+//           fontSize: 16.5,
+//         ),
+//         floatingLabelBehavior: FloatingLabelBehavior.always,
+//         suffixIcon: const CustomSuffixIcon(
+//           svgIcon: "assets/icon/user.svg",
+//         ),
+//         contentPadding: const EdgeInsets.symmetric(
+//           horizontal: 42,
+//           vertical: 24,
+//         ),
+//         enabledBorder: OutlineInputBorder(
+//           borderRadius: BorderRadius.circular(20.0),
+//           borderSide: const BorderSide(color: Colors.white),
+//           gapPadding: 10,
+//         ),
+//         focusedBorder: OutlineInputBorder(
+//           borderRadius: BorderRadius.circular(20.0),
+//           borderSide: const BorderSide(
+//             color: Colors.white,
+//           ),
+//           gapPadding: 10,
+//         ),
+//         filled: true,
 
-      // enabledBorder: OutlineInputBorder(
-      //   borderRadius: BorderRadius.circular(28),
-      // ),
-    ),
-  );
-}
-
-TextFormField emailFormFeild() {
-  return TextFormField(
-    style: const TextStyle(
-      fontFamily: "Poppins",
-      fontSize: 18,
-      color: Colors.white,
-    ),
-    keyboardType: TextInputType.emailAddress,
-    decoration: InputDecoration(
-      labelText: "Email Address",
-      labelStyle: const TextStyle(
-        fontFamily: "Poppins",
-        color: Colors.white,
-        fontSize: 19,
-      ),
-      hintText: "Enter your name",
-      hintStyle: const TextStyle(
-        fontFamily: "Poppins",
-        color: Colors.white,
-        fontSize: 16.5,
-      ),
-      floatingLabelBehavior: FloatingLabelBehavior.always,
-      suffixIcon: const CustomSuffixIcon(
-        svgIcon: "assets/icon/user.svg",
-      ),
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: 42,
-        vertical: 24,
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(20.0),
-        borderSide: const BorderSide(color: Colors.white),
-        gapPadding: 10,
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(20.0),
-        borderSide: const BorderSide(
-          color: Colors.white,
-        ),
-        gapPadding: 10,
-      ),
-      filled: true,
-
-      // enabledBorder: OutlineInputBorder(
-      //   borderRadius: BorderRadius.circular(28),
-      // ),
-    ),
-  );
-}
+//         // enabledBorder: OutlineInputBorder(
+//         //   borderRadius: BorderRadius.circular(28),
+//         // ),
+//       ),
+//     );
+//   }
+// }

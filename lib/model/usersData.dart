@@ -17,18 +17,18 @@ class DataUsers {
 
     int status;
     String message;
-    Users data;
+    List<Users> data;
 
     factory DataUsers.fromJson(Map<String, dynamic> json) => DataUsers(
         status: json["status"],
         message: json["message"],
-        data: Users.fromJson(json["data"]),
+        data: List<Users>.from(json["data"].map((x) => Users.fromJson(x))),
     );
 
     Map<String, dynamic> toJson() => {
         "status": status,
         "message": message,
-        "data": data.toJson(),
+        "data": List<dynamic>.from(data.map((x) => x.toJson())),
     };
 }
 
