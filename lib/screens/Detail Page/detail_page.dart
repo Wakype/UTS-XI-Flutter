@@ -35,34 +35,39 @@ class _DetailPageState extends State<DetailPage> {
           text: 'Transaction completed successfully!',
           // autoCloseDuration: const Duration(seconds: 5),
           onConfirmBtnTap: () {
-            Navigator.pushNamed(context, "/login");
+            Navigator.pushNamed(context, "/home");
           },
         );
       },
       text: 'Checkout',
-      color: const Color(0xFFFFB200),
+      color: const Color(0xffFFB200),
     );
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: const Color(0xffE2E1E4),
+      backgroundColor: const Color.fromARGB(255, 245, 245, 245),
       body: CustomScrollView(
         slivers: [
           //sliver app bar
           SliverAppBar(
-            backgroundColor: const Color(0xffE2E1E4),
-            leading: const Icon(
-              Icons.chevron_left,
-              size: 30,
+            leading: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, "/login");
+              },
+              child: const Icon(
+                Icons.chevron_left,
+                size: 35,
+                color: Colors.black,
+              ),
             ),
-            expandedHeight: height * 0.54,
+            expandedHeight: height * 0.5,
             pinned: true,
             // elevation: 0,
 
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
-                color: const Color(0xffE2E1E4),
+                color: const Color.fromARGB(255, 245, 245, 245),
                 child: Image.asset('assets/image/logo.png'),
               ),
               centerTitle: true,
@@ -73,87 +78,111 @@ class _DetailPageState extends State<DetailPage> {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(10),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  height: height * 0.4,
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 28, vertical: 30),
-                    child: Column(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              "Jus",
-                              style: TextStyle(
-                                  fontSize: 21,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: "Poppins"),
-                            ),
-                            Row(
-                              children: [
-                                Container(
-                                  margin: const EdgeInsets.symmetric(
-                                      horizontal: 10),
-                                  width: 100,
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      InkWell(
-                                        onTap: _decrementCount,
-                                        child: Container(
-                                          child: const Icon(
-                                            Icons.remove,
-                                            size: 18,
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        "$_count",
-                                        style: const TextStyle(fontSize: 14),
-                                      ),
-                                      InkWell(
-                                        onTap: _incrementCount,
-                                        child: Container(
-                                          child: const Icon(
-                                            Icons.add,
-                                            size: 18,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: height * 0.04,
-                        ),
-                        const Text("Asal"),
-                        SizedBox(
-                          height: height * 0.05,
-                        ),
-                        const SizedBox(
-                          height: 40,
-                        ),
-                        successAlert,
-                      ],
+              child: Container(
+                height: height * 0.4,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.10),
+                      spreadRadius: 3,
+                      blurRadius: 2,
+                      offset: const Offset(0, 5), // changes position of shadow
                     ),
+                  ],
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 28, vertical: 30),
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "Fresh Mango Juice",
+                            style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Poppins"),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                width: 110,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(18),
+                                    color: const Color(0xffFFF0CD)),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    InkWell(
+                                      onTap: _decrementCount,
+                                      child: Container(
+                                        child: const Icon(Icons.remove,
+                                            size: 16, color: Color(0xffFFB200)),
+                                      ),
+                                    ),
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Container(
+                                        color: Colors.white,
+                                        alignment: Alignment.center,
+                                        height: 40,
+                                        width: 40,
+                                        child: Text(
+                                          "$_count",
+                                          style: const TextStyle(
+                                              fontSize: 14,
+                                              color: Color(0xffFFB200)),
+                                        ),
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: _incrementCount,
+                                      child: Container(
+                                        child: const Icon(Icons.add,
+                                            size: 16, color: Color(0xffFFB200)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const Text(
+                        "Bogor",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w600),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text(
+                        'Description',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w700),
+                      ),
+                      const Text(
+                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. "),
+                      SizedBox(
+                        height: height * 0.05,
+                      ),
+                      successAlert,
+                    ],
                   ),
                 ),
               ),
