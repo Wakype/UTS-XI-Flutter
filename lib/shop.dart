@@ -49,7 +49,7 @@ class _ShopState extends State<Shop> {
                           // textAlign: TextAlign.right,
                           controller: search,
                           decoration: InputDecoration(
-                              hintText: "Jus Salak enak...  ",
+                              hintText: "Cari Juice....",
                               hintStyle: TextStyle(fontStyle: FontStyle.italic),
                               suffixIcon: Icon(
                                 Icons.search,

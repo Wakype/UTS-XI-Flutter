@@ -246,13 +246,11 @@ import 'package:flutter/material.dart';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_shop/model/shopsData.dart';
-import 'package:my_shop/service/shopsService.dart';
-import 'package:my_shop/main.dart';
 
 class DetailPage extends StatefulWidget {
   final Shops data;
 
-  DetailPage({required this.data});
+  const DetailPage({required this.data});
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -294,8 +292,9 @@ class _DetailPageState extends State<DetailPage> {
                 color: Colors.black,
               ),
             ),
-            expandedHeight: height * 0.5,
+            expandedHeight: height * 0.53,
             pinned: true,
+
             // elevation: 0,
 
             flexibleSpace: FlexibleSpaceBar(
@@ -339,7 +338,7 @@ class _DetailPageState extends State<DetailPage> {
                         children: [
                           Text(
                             widget.data.nameBarang,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: "Poppins"),
@@ -403,7 +402,7 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                       Text(
                         widget.data.asalBarang,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 16,
                             fontFamily: "Poppins",
                             fontWeight: FontWeight.w600),
@@ -507,7 +506,7 @@ Widget _buildButton(
               ),
               Text(
                 data.hargaBarang,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                     fontSize: 18),

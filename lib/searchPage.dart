@@ -53,8 +53,8 @@ class _SearchPageState extends State<SearchPage> {
                         child: TextField(
                           // textAlign: TextAlign.right,
                           controller: search,
-                          decoration: InputDecoration(
-                              hintText: "Jus Salak enak...",
+                          decoration: InputDecoration(  
+                              hintText: "Cari Juice....",
                               hintStyle: TextStyle(fontStyle: FontStyle.italic),
                               suffixIcon: Icon(
                                 Icons.search,
