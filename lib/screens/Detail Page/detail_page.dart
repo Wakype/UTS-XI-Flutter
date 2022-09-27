@@ -275,22 +275,6 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    final successAlert = _buildButton(
-        onTap: () {
-          // Navigator.pushNamed(context, "/login");
-          CoolAlert.show(
-            context: context,
-            type: CoolAlertType.success,
-            text: 'Transaction completed successfully!',
-            // autoCloseDuration: const Duration(seconds: 5),
-            onConfirmBtnTap: () {
-              Navigator.pushNamed(context, "/shop");
-            },
-          );
-        },
-        text: 'Checkout',
-        color: const Color(0xffFFB200),
-        data: widget.data);
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
 
@@ -315,9 +299,11 @@ class _DetailPageState extends State<DetailPage> {
             // elevation: 0,
 
             flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                color: const Color.fromARGB(255, 245, 245, 245),
-                child: Image.asset(widget.data.gambarBarang),
+              background: SafeArea(
+                child: Container(
+                  color: const Color.fromARGB(255, 245, 245, 245),
+                  child: Image.asset(widget.data.gambarBarang),
+                ),
               ),
               centerTitle: true,
             ),
@@ -373,10 +359,17 @@ class _DetailPageState extends State<DetailPage> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     InkWell(
-                                      onTap: _decrementCount,
+                                      onTap: () {
+                                        if (_count != 0) {
+                                          _decrementCount();
+                                        }
+                                      },
                                       child: Container(
-                                        child: const Icon(Icons.remove,
-                                            size: 16, color: Color(0xffFFB200)),
+                                        child: Icon(Icons.remove,
+                                            size: 16,
+                                            color: _count == 0
+                                                ? Colors.grey
+                                                : Color(0xffFFB200)),
                                       ),
                                     ),
                                     ClipRRect(
@@ -430,7 +423,12 @@ class _DetailPageState extends State<DetailPage> {
                       SizedBox(
                         height: height * 0.05,
                       ),
-                      successAlert,
+                      _buildButton(
+                          context: context,
+                          text: 'Checkout',
+                          color: const Color(0xffFFB200),
+                          data: widget.data,
+                          count: _count),
                     ],
                   ),
                 ),
@@ -444,17 +442,30 @@ class _DetailPageState extends State<DetailPage> {
 }
 
 Widget _buildButton(
-    {VoidCallback? onTap,
+    {context,
     required String text,
     Color? color,
-    required Shops data}) {
+    required Shops data,
+    required int count}) {
   return MaterialButton(
-    color: color,
+    color: count != 0 ? color : Colors.grey,
     minWidth: double.infinity,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(20.0),
     ),
-    onPressed: onTap,
+    onPressed: () {
+      if (count != 0) {
+        CoolAlert.show(
+          context: context,
+          type: CoolAlertType.success,
+          text: 'Transaction completed successfully!',
+          // autoCloseDuration: const Duration(seconds: 5),
+          onConfirmBtnTap: () {
+            Navigator.pushNamed(context, "/shop");
+          },
+        );
+      }
+    },
     child: Padding(
       padding: const EdgeInsets.symmetric(vertical: 24),
       child: Row(

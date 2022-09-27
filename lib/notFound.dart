@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'model/shopsData.dart';
 import 'service/shopsService.dart';
 
-class SearchPage extends StatefulWidget {
+class NotFound extends StatefulWidget {
   final String keyword;
 
-  SearchPage({required this.keyword});
+  NotFound({required this.keyword});
 
   @override
-  State<SearchPage> createState() => _SearchPageState();
+  State<NotFound> createState() => _NotFoundState();
 }
 
-class _SearchPageState extends State<SearchPage> {
+class _NotFoundState extends State<NotFound> {
   List<Shops> dataShops = [];
   List<Shops> dataSearch = [];
   TextEditingController search = TextEditingController();
@@ -54,7 +54,7 @@ class _SearchPageState extends State<SearchPage> {
                           // textAlign: TextAlign.right,
                           controller: search,
                           decoration: InputDecoration(
-                              hintText: "Jus Salak enak...",
+                              hintText: "VGA RTX 3050 Ti...",
                               hintStyle: TextStyle(fontStyle: FontStyle.italic),
                               suffixIcon: Icon(
                                 Icons.search,
@@ -107,39 +107,11 @@ class _SearchPageState extends State<SearchPage> {
               ),
               Column(
                 children: [
-                  dataSearch.isNotEmpty
-                      ? Wrap(
-                          spacing: MediaQuery.of(context).size.width * 0.05,
-                          children: List.generate(dataSearch.length, (index) {
-                            return ShopList(
-                                context, dataSearch[index], 0xffFFB200);
-                          }))
-                      : Container(
-                          height: 700,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.search_off_outlined,
-                                size: 70,
-                                color: Color(0xffFFB200),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Center(
-                                child: Text(
-                                  'Barang tidak ditemukan!',
-                                  style: TextStyle(
-                                    fontSize: 30,
-                                    color: Color(0xffFFB200),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
+                  Wrap(
+                      spacing: MediaQuery.of(context).size.width * 0.05,
+                      children: [
+                        Container(child: Text('Barang Tidak Ditemukan!'))
+                      ]),
                 ],
               ),
             ],

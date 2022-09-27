@@ -49,7 +49,7 @@ class _ShopState extends State<Shop> {
                           // textAlign: TextAlign.right,
                           controller: search,
                           decoration: InputDecoration(
-                              hintText: "VGA RTX 3050 Ti...",
+                              hintText: "Jus Salak enak...  ",
                               hintStyle: TextStyle(fontStyle: FontStyle.italic),
                               suffixIcon: Icon(
                                 Icons.search,
@@ -63,8 +63,13 @@ class _ShopState extends State<Shop> {
                                 ),
                               )),
                           onSubmitted: (value) {
-                            Navigator.pushNamed(context, '/searchPage',
-                                arguments: search.text);
+                            if (dataShops == null) {
+                              Navigator.pushNamed(context, '/notFound',
+                                  arguments: search.text);
+                            } else {
+                              Navigator.pushNamed(context, '/searchPage',
+                                  arguments: search.text);
+                            }
                           },
                         )),
                     Container(
