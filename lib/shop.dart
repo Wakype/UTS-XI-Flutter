@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'model/shopsData.dart';
 import 'service/shopsService.dart';
+import 'searchPage.dart';
 
 class Shop extends StatefulWidget {
   const Shop({super.key});
@@ -16,7 +17,7 @@ class _ShopState extends State<Shop> {
   TextEditingController search = TextEditingController();
 
   void getShopsData() {
-    FoodService().getData().then((value) {
+    ShopService().getData().then((value) {
       setState(() {
         dataShops = value;
       });
@@ -46,9 +47,9 @@ class _ShopState extends State<Shop> {
                         width: MediaQuery.of(context).size.width * 0.550,
                         child: TextField(
                           // textAlign: TextAlign.right,
-                          // controller: search,
+                          controller: search,
                           decoration: InputDecoration(
-                              hintText: "VGA RTX 3050 Ti...",
+                              hintText: "Cari Juice....",
                               hintStyle: TextStyle(fontStyle: FontStyle.italic),
                               suffixIcon: Icon(
                                 Icons.search,
@@ -62,8 +63,8 @@ class _ShopState extends State<Shop> {
                                 ),
                               )),
                           onSubmitted: (value) {
-                            // Navigator.pushNamed(context, '/searchPage',
-                            //     arguments: search.text);
+                            Navigator.pushNamed(context, '/searchPage',
+                                arguments: search.text);
                           },
                         )),
                     Container(
@@ -258,19 +259,19 @@ Widget Feature(
         height: 100,
         margin: EdgeInsets.only(left: 7, right: 10, bottom: 15),
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Color(0xffFFF4CF).withOpacity(0.7),
+              spreadRadius: 5,
+              blurRadius: 5,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
           color: Color(bgColor),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: Color(color),
           ),
-          // color: Color(color),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Color.fromARGB(255, 0, 0, 0),
-          //     // blurRadius: 5,
-          //     offset: Offset(8, 10), // Shadow position
-          //   ),
-          // ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -304,85 +305,104 @@ Widget ShopList(context, Shops data, int color) {
       children: [
         InkWell(
           onTap: () {
-            Navigator.pushNamed(context, '/detailEat', arguments: data);
+            Navigator.pushNamed(context, '/detailShop', arguments: data);
           },
-          child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 20),
-                width: 200,
-                height: 200,
-                decoration: BoxDecoration(
+          child: Container(
+            margin: EdgeInsets.symmetric(vertical: 15),
+            height: 350,
+            width: 200,
+            decoration: BoxDecoration(
+                // color: Colors.blue,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xffFFF4CF).withOpacity(0.7),
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+                border: Border.all(width: 2, color: Color(color)),
+                borderRadius: BorderRadius.all(Radius.circular(15))),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: 200,
+                  height: 200,
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15)),
                     image: DecorationImage(
-                      image: NetworkImage(
+                      image: AssetImage(
                         data.gambarBarang,
                       ),
                       fit: BoxFit.contain,
                     ),
-                    color: Color(0xff277BC0)),
-              ),
-              Container(
-                width: 200,
-                height: 130,
-                decoration: BoxDecoration(
-                  color: Color(0xff277BC0),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15)),
+                  ),
                 ),
-                child: Column(
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      margin: EdgeInsets.only(left: 15, right: 15, top: 15),
-                      child: Text(
-                        data.nameBarang,
-                        style: TextStyle(
-                          color: Color(color),
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      margin: EdgeInsets.symmetric(horizontal: 15),
-                      child: Text(
-                        data.asalBarang,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    Container(
-                      margin:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                      width: double.infinity,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            data.hargaBarang,
-                            style: TextStyle(color: Color(color), fontSize: 20),
-                          ),
-                          Icon(
-                            Icons.bookmark_outline,
+                Container(
+                  width: 200,
+                  // height: 130,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15)),
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.only(left: 15, right: 15, top: 15),
+                        child: Text(
+                          data.nameBarang,
+                          style: TextStyle(
                             color: Color(color),
-                            size: 30,
-                          )
-                        ],
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
                       ),
-                    )
-                  ],
-                ),
-              )
-            ],
+                      Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.symmetric(horizontal: 15),
+                        child: Text(
+                          data.asalBarang,
+                          style: TextStyle(
+                            color: Color(0xffFFCB42),
+                            fontSize: 16,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      Container(
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              data.hargaBarang,
+                              style: TextStyle(
+                                  color: Color(color),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Icon(
+                              Icons.bookmark_outline,
+                              color: Color(color),
+                              size: 30,
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ],

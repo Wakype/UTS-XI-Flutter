@@ -1,8 +1,22 @@
 {
   "status": 200,
   "message": "Successfully",
-  "data": {
-    "email": "smkmq@gmail.com",
-    "password": "12345"
-  }
+  "data": [
+    {
+      "email": "admin@gmail.com",
+      "password": "admin"
+    },
+    {
+      "email": "waky@gmail.com",
+      "password": "160306"
+    },
+    {
+      "email": "alfaraby@gmail.com",
+      "password": "akagami"
+    },
+    {
+      "email": "smkmq@gmail.com",
+      "password": "12345"
+    }
+  ]
 }
